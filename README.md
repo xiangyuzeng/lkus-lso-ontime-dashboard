@@ -29,7 +29,7 @@ that board's confirmed, air-gapped, read-only pipeline pattern. English UI.
 | **LSO100 on-time** | cumulative `effective_hours` from hire → acquisition **≤ 112** |
 | **LSO200 on-time** | calendar **days** from hire → acquisition **≤ 45** |
 | **Entered (denominator) — LSO100** | everyone assigned to a store dept (**active + separated**) ∪ LSO100 completers |
-| **Entered (denominator) — LSO200** | LSO100 completers ∪ LSO200 completers (the pool that advances) |
+| **Entered (denominator) — LSO200** | LSO100 completers ∪ LSO200 completers, **excluding anyone whose current position is Barista** (Barista / Barista Trainee) — keeps the LSO200 "entered training" pool consistent with the in-training tracker |
 | **In progress** | `entered − completed` (a proxy — see *Data reality*) |
 
 ## Confirmed sources (live read-only discovery, 2026-06-01)
@@ -85,7 +85,7 @@ Nothing is fabricated.
     "tenant": "LKUS", "source": "confirmed",          // or "seed"
     "region_map_status": "pending",                   // pending | partial | complete
     "metrics_def":     { "LSO100": { "basis":"effective_hours","budget":112,"unit":"hours","clock_from":"hire" }, "LSO200": { "basis":"calendar_days","budget":45,"unit":"days","clock_from":"hire" } },
-    "denominator_def": { "LSO100": "store roster (active+separated) ∪ LSO100 completers", "LSO200": "LSO100 completers ∪ LSO200 completers" },
+    "denominator_def": { "LSO100": "store roster (active+separated) ∪ LSO100 completers", "LSO200": "LSO100 completers ∪ LSO200 completers, excluding current Baristas" },
     "sources":    { "roster":"…", "cert":"…", "hours":"…" },
     "data_notes": { "lso100_anomalies": 0, "lso200_anomalies": 0 }
   },

@@ -11,7 +11,9 @@ LSO200 for tenant LKUS:
 
 Denominator ("entered training"):
   - LSO100: everyone assigned to a store dept (active + separated)  UNION  LSO100 completers
-  - LSO200: LSO100 completers  UNION  LSO200 completers
+  - LSO200: LSO100 completers  UNION  LSO200 completers, EXCLUDING anyone whose
+            current position is Barista (or Barista Trainee) — keeps the LSO200
+            "entered training" population consistent with the in-training board.
   "In progress" is the denominator minus the completers, because NO in-progress
   training is recorded for LKUS (the "In Training" cer_ids and
   t_ehr_employee_training_record are both empty) — see README.
@@ -67,7 +69,7 @@ TITLES = {
 }
 DENOM_DEF = {
     "LSO100": "store roster (active+separated) ∪ LSO100 completers",
-    "LSO200": "LSO100 completers ∪ LSO200 completers",
+    "LSO200": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
 }
 
 REGION_MAP_PATH = REPO_ROOT / "pipeline" / "config" / "region_map.csv"
@@ -75,22 +77,28 @@ REGION_MAP_PATH = REPO_ROOT / "pipeline" / "config" / "region_map.csv"
 # ── SQL (held verbatim; mirrors README "Confirmed sources") ──────────────
 
 ROSTER_SQL = """
-SELECT e.emp_no, e.join_date, e.status, d.name AS store_name
+SELECT e.emp_no, e.join_date, e.status, d.name AS store_name, p.name AS post_name
 FROM   t_ehr_employee e
 JOIN   t_ehr_department d
        ON d.id = e.belong_dept_id AND d.type = 0 AND d.tenant = %s
+LEFT JOIN t_ehr_employee_post_relation pr
+       ON pr.emp_no = e.emp_no AND pr.relation_type = 0 AND pr.tenant = %s
+LEFT JOIN t_ehr_post p
+       ON p.id = pr.post_id AND p.tenant = %s
 WHERE  e.tenant = %s
 """
 
 COMPLETERS_SQL = """
 SELECT q.emp_no, y.template_no, MIN(q.obtaining_date) AS obtaining_date,
-       e.join_date, e.status, d.name AS store_name
+       e.join_date, e.status, d.name AS store_name, p.name AS post_name
 FROM   t_ehr_employee_qualification_info q
 JOIN   t_ehr_yxt_certificate y ON q.cer_id = y.cer_id
 JOIN   t_ehr_employee e        ON e.emp_no = q.emp_no AND e.tenant = %s
 LEFT JOIN t_ehr_department d   ON d.id = e.belong_dept_id AND d.type = 0 AND d.tenant = %s
+LEFT JOIN t_ehr_employee_post_relation pr ON pr.emp_no = e.emp_no AND pr.relation_type = 0 AND pr.tenant = %s
+LEFT JOIN t_ehr_post p         ON p.id = pr.post_id AND p.tenant = %s
 WHERE  q.tenant = %s AND y.template_no IN ('KFS', 'ZBZG')
-GROUP BY q.emp_no, y.template_no, e.join_date, e.status, d.name
+GROUP BY q.emp_no, y.template_no, e.join_date, e.status, d.name, p.name
 """
 
 # emp_no list + global date window get parameterised in batches.
@@ -145,7 +153,7 @@ def fetch_roster() -> list[dict[str, Any]]:
     conn = connect(IEHR_DB)
     try:
         with conn.cursor() as cur:
-            cur.execute(ROSTER_SQL, (TENANT, TENANT))
+            cur.execute(ROSTER_SQL, (TENANT, TENANT, TENANT, TENANT))
             return list(cur.fetchall())
     finally:
         conn.close()
@@ -156,7 +164,7 @@ def fetch_completers() -> list[dict[str, Any]]:
     conn = connect(IEHR_DB)
     try:
         with conn.cursor() as cur:
-            cur.execute(COMPLETERS_SQL, (TENANT, TENANT, TENANT))
+            cur.execute(COMPLETERS_SQL, (TENANT, TENANT, TENANT, TENANT, TENANT))
             rows = list(cur.fetchall())
     finally:
         conn.close()
@@ -304,6 +312,18 @@ def build_payload(
         if not emp_store.get(e):
             emp_store[e] = (c.get("store_name") or "").strip()
 
+    # emp -> current post_name (roster first, then completer) for the LSO200
+    # position exclusion below.
+    emp_post: dict[str, str] = {}
+    for r in roster:
+        e = str(r["emp_no"])
+        if not emp_post.get(e):
+            emp_post[e] = (r.get("post_name") or "").strip()
+    for c in completers:
+        e = str(c["emp_no"])
+        if not emp_post.get(e):
+            emp_post[e] = (c.get("post_name") or "").strip()
+
     roster_emps = {str(r["emp_no"]) for r in roster}
 
     def region_of(emp: str) -> str:
@@ -340,6 +360,16 @@ def build_payload(
             continue
         if (od - jd).days <= budget200:
             lso200_ontime.add(e)
+
+    # Position exclusion — consistency with the in-training board: drop associates
+    # whose CURRENT position is Barista (or Barista Trainee) from the LSO200 metric
+    # (denominator, completers, and on-time alike). LSO100 is unchanged.
+    EXCLUDE_LSO200 = {"Barista", "Barista Trainee"}
+    def _keep200(e: str) -> bool:
+        return emp_post.get(e, "") not in EXCLUDE_LSO200
+    lso200_completers = {e for e in lso200_completers if _keep200(e)}
+    lso200_denom = {e for e in lso200_denom if _keep200(e)}
+    lso200_ontime = {e for e in lso200_ontime if _keep200(e)}
 
     metrics = [
         _assemble("LSO100", lso100_denom, lso100_completers, lso100_ontime, emp_store, region_of, lso100_anom),
