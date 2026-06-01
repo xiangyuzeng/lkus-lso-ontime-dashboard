@@ -1,35 +1,28 @@
 'use client';
 
-import { FreshnessBadge } from '@/components/FreshnessBadge';
-import { SeedBadge } from '@/components/SeedBadge';
+import { BrandHeader } from '@/components/BrandHeader';
 import { MetricCard } from '@/components/MetricCard';
+import { Methodology } from '@/components/Methodology';
 import { freshness } from '@/lib/freshness';
 import { palette, radius, space } from '@/lib/tokens';
 import { usePayload } from '@/lib/payload';
-import type { Payload, PayloadMeta, StoreRow } from '@/lib/types';
+import type { PayloadMeta, StoreRow } from '@/lib/types';
 
 export default function Page() {
   const { status, payload, error } = usePayload();
 
   if (status === 'loading' || !payload) {
     return (
-      <main style={mainStyle}>
-        <Shell>
-          <div style={{ padding: space['2xl'], color: palette.textMuted }}>Loading…</div>
-        </Shell>
-      </main>
+      <StateScreen>
+        <span style={{ color: palette.textMuted }}>Loading…</span>
+      </StateScreen>
     );
   }
-
   if (status === 'error') {
     return (
-      <main style={mainStyle}>
-        <Shell>
-          <div style={{ padding: space['2xl'], color: palette.danger }}>
-            Failed to load data: {error ?? 'unknown error'}
-          </div>
-        </Shell>
-      </main>
+      <StateScreen>
+        <span style={{ color: palette.danger }}>Failed to load data: {error ?? 'unknown error'}</span>
+      </StateScreen>
     );
   }
 
@@ -37,55 +30,49 @@ export default function Page() {
   const isSeed = payload.meta.source === 'seed';
 
   return (
-    <main style={mainStyle}>
-      <div className={stale ? 'board--stale' : undefined}>
-        <Shell>
-          <Header generatedAt={payload.meta.generated_at} isSeed={isSeed} tz={payload.meta.tz} />
+    <main style={{ minHeight: '100vh', background: palette.page }}>
+      <BrandHeader
+        title="LSO On-Time Completion"
+        subtitle={`North America · tenant LKUS · reporting timezone ${payload.meta.tz}`}
+        generatedAt={payload.meta.generated_at}
+        isSeed={isSeed}
+      />
 
+      <div className={stale ? 'board--stale' : undefined}>
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: `${space.xl} ${space.xl} ${space['3xl']}`,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: space.xl,
+          }}
+        >
           {payload.meta.region_map_status === 'pending' && <RegionPendingBanner storeCount={payload.stores.length} />}
 
-          <section style={{ display: 'grid', gap: space.xl, gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', marginTop: space.xl }}>
+          <section style={{ display: 'grid', gap: space.xl, gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))' }}>
             {payload.metrics.map((m) => (
               <MetricCard key={m.level} metric={m} />
             ))}
           </section>
 
+          <Methodology payload={payload} />
+
           <StoresReference stores={payload.stores} />
 
-          <Footnote />
           <SourceLine meta={payload.meta} />
-        </Shell>
+        </div>
       </div>
     </main>
   );
 }
 
-const mainStyle: React.CSSProperties = {
-  minHeight: '100vh',
-  background: palette.page,
-  paddingBottom: space['3xl'],
-};
-
-function Shell({ children }: { children: React.ReactNode }) {
+function StateScreen({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: `${space['2xl']} ${space.xl}` }}>{children}</div>
-  );
-}
-
-function Header({ generatedAt, isSeed, tz }: { generatedAt: string; isSeed: boolean; tz: string }) {
-  return (
-    <header style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: space.md }}>
-      <div>
-        <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 800, color: palette.navy, letterSpacing: '-0.01em' }}>
-          LSO On-Time Completion
-        </h1>
-        <div style={{ marginTop: '6px', display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '10px', color: palette.textMuted, fontSize: '13px' }}>
-          <span>Luckin Coffee · North America · LKUS · reporting TZ {tz}</span>
-          {isSeed && <SeedBadge />}
-        </div>
-      </div>
-      <FreshnessBadge generatedAt={generatedAt} />
-    </header>
+    <main style={{ minHeight: '100vh', background: palette.page }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: space['3xl'] }}>{children}</div>
+    </main>
   );
 }
 
@@ -94,7 +81,6 @@ function RegionPendingBanner({ storeCount }: { storeCount: number }) {
     <div
       role="note"
       style={{
-        marginTop: space.lg,
         padding: `${space.md} ${space.lg}`,
         background: palette.goldBg,
         border: `1px solid ${palette.gold}`,
@@ -115,7 +101,7 @@ function RegionPendingBanner({ storeCount }: { storeCount: number }) {
 function StoresReference({ stores }: { stores: StoreRow[] }) {
   if (!stores.length) return null;
   return (
-    <section style={{ marginTop: space['2xl'] }}>
+    <section>
       <h3 style={{ margin: `0 0 ${space.md}`, fontSize: '14px', color: palette.text }}>
         Stores &amp; current region mapping{' '}
         <span style={{ color: palette.textPlaceholder, fontWeight: 400 }}>· edit region_map.csv to group these</span>
@@ -136,13 +122,7 @@ function StoresReference({ stores }: { stores: StoreRow[] }) {
               return (
                 <tr key={s.store} style={{ borderTop: `1px solid ${palette.border}` }}>
                   <Td>{s.store}</Td>
-                  <Td>
-                    {pending ? (
-                      <span style={{ color: palette.gold, fontWeight: 600 }}>pending</span>
-                    ) : (
-                      s.region
-                    )}
-                  </Td>
+                  <Td>{pending ? <span style={{ color: palette.gold, fontWeight: 600 }}>pending</span> : s.region}</Td>
                   <Td align="right">{s.lso100_denominator}</Td>
                   <Td align="right">{s.lso200_denominator}</Td>
                 </tr>
@@ -162,27 +142,12 @@ function Td({ children, align }: { children: React.ReactNode; align?: 'right' })
   return <td style={{ padding: '9px 14px', textAlign: align ?? 'left', fontVariantNumeric: 'tabular-nums' }}>{children}</td>;
 }
 
-function Footnote() {
-  return (
-    <p style={{ marginTop: space.xl, color: palette.textMuted, fontSize: '12px', lineHeight: 1.7 }}>
-      <strong>Rate</strong> = (earned the cert on time) ÷ (entered that level&apos;s training).{' '}
-      <strong>LSO100 on-time</strong> = cumulative clocked effective-hours from hire to acquisition ≤ 112.{' '}
-      <strong>LSO200 on-time</strong> = calendar days from hire to acquisition ≤ 45.{' '}
-      <strong>Denominator</strong> — LSO100: everyone assigned to a store (active + separated) plus LSO100 completers;
-      LSO200: the LSO100-completer pool plus LSO200 completers. <strong>In progress</strong> = entered − completed
-      (no in-progress training is recorded upstream for LKUS, so it is the roster minus completers).
-      Completers earned before their hire date or with no hire date are excluded from on-time and shown as
-      <em> Excluded</em>.
-    </p>
-  );
-}
-
 function SourceLine({ meta }: { meta: PayloadMeta }) {
   const notes = Object.entries(meta.data_notes ?? {})
     .map(([k, v]) => `${k}=${v}`)
     .join(' · ');
   return (
-    <p style={{ marginTop: space.sm, color: palette.textPlaceholder, fontSize: '11px', fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}>
+    <p style={{ margin: 0, color: palette.textPlaceholder, fontSize: '11px', fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}>
       roster: {meta.sources.roster} · cert: {meta.sources.cert} · hours: {meta.sources.hours} · region_map:{' '}
       {meta.region_map_status} · generated_by: {meta.generated_by}
       {notes ? ` · ${notes}` : ''}

@@ -12,13 +12,17 @@ export function MetricCard({ metric }: { metric: Metric }) {
   return (
     <div
       style={{
+        position: 'relative',
+        overflow: 'hidden',
         background: palette.surface,
         border: `1px solid ${palette.border}`,
         borderRadius: radius.lg,
-        boxShadow: shadow.sm,
+        boxShadow: shadow.md,
         padding: space.xl,
+        paddingLeft: '26px',
       }}
     >
+      <span aria-hidden style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: palette.navy }} />
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: space.sm, alignItems: 'baseline' }}>
         <h2 style={{ margin: 0, fontSize: '18px', color: palette.navy }}>
           <span style={{ fontWeight: 800 }}>{metric.level}</span>{' '}
