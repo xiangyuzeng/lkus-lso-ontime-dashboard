@@ -1,0 +1,25 @@
+# Run from the pipeline/ directory on the internal refresh host (dbtools02):
+#   cp .env.example .env      # fill in secrets/hosts
+#   docker compose up -d --build
+# .env must live next to this file (see .env.example).
+
+# Pinned project name so `docker compose up` here doesn't tear down the sibling
+# luckin-efficiency-pipeline / luckin-store-ops-pipeline containers (they all
+# use a pipeline/ subdir, so Compose's default project name would collide).
+name: lkus-lso-ontime-pipeline
+
+services:
+  pipeline:
+    build:
+      context: ..
+      dockerfile: pipeline/Dockerfile
+    container_name: lkus-lso-ontime-pipeline
+    env_file: .env
+    restart: always
+    volumes:
+      - ./logs:/workspace/logs
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

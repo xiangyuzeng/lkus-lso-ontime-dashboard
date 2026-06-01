@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+.vercel
+logs
+*.log
+.env
+pipeline/__pycache__
+**/__pycache__
