@@ -1,0 +1,48 @@
+name: refresh-ontime-payload
+
+# The canonical refresh runs on the internal cron host (see crontab.example)
+# because the CI runner cannot reach the internal RDS. This workflow stays
+# workflow_dispatch-only so an operator can trigger an out-of-band refresh from
+# the GitHub UI; once a self-hosted runner with VPC reach is provisioned, the
+# `schedule` block below can be enabled (>= daily is the requirement).
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 6 * * *'   # daily 06:00 UTC; ENABLE ONLY after a self-hosted runner exists
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    # Replace with the label of the network-bridged runner (e.g. luckin-internal)
+    # once provisioned. Default `ubuntu-latest` will fail to reach the DB.
+    runs-on: [self-hosted, luckin-internal]
+    env:
+      AWS_REGION: us-east-1
+      MYSQL_SECRET_NAME: ${{ secrets.MYSQL_SECRET_NAME }}
+      IEHR_HOST: ${{ secrets.IEHR_HOST }}
+      OPEMPEFFICIENCY_HOST: ${{ secrets.OPEMPEFFICIENCY_HOST }}
+      GITHUB_TOKEN: ${{ secrets.LSO_PUSH_TOKEN }}
+      GITHUB_REPO: ${{ github.repository }}
+      GITHUB_BRANCH: ${{ github.ref_name }}
+      GITHUB_FILE_PATH: public/data.json
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pipeline deps
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Run refresh
+        run: bash refresh.sh
+
+      # Vercel auto-deploys on push of public/data.json — no extra step needed.
