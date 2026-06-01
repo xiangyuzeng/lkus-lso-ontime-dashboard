@@ -335,6 +335,7 @@ def build_payload(
     lso100_denom = roster_emps | lso100_completers
     lso100_ontime: set[str] = set()
     lso100_anom = 0
+    lso100_no_attend = 0
     budget100 = LEVELS["LSO100"]["budget"]
     for c in lso100:
         e = str(c["emp_no"])
@@ -342,7 +343,14 @@ def build_payload(
         if jd is None or od is None or od < jd:
             lso100_anom += 1
             continue
-        if hours_map.get(e, 0.0) <= budget100:
+        h = hours_map.get(e)
+        if h is None:
+            # No worked-hours recorded in the hire→cert window (e.g. managers /
+            # corporate roles who don't clock store attendance) — we can't
+            # confirm "earned within 112 worked-hours", so NOT counted on-time.
+            lso100_no_attend += 1
+            continue
+        if h <= budget100:
             lso100_ontime.add(e)
 
     # ---- LSO200: calendar-days-based on-time ----
@@ -415,7 +423,7 @@ def build_payload(
                 "cert": f"{IEHR_DB}.t_ehr_employee_qualification_info + t_ehr_yxt_certificate",
                 "hours": f"{OPEMPEFFICIENCY_DB}.t_attendance",
             },
-            "data_notes": {"lso100_anomalies": lso100_anom, "lso200_anomalies": lso200_anom},
+            "data_notes": {"lso100_anomalies": lso100_anom, "lso100_no_attendance": lso100_no_attend, "lso200_anomalies": lso200_anom},
         },
         "metrics": metrics,
         "regions": regions_list,

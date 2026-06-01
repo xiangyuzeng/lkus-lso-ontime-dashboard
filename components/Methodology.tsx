@@ -8,6 +8,7 @@ import { palette, radius, shadow, space } from '@/lib/tokens';
 export function Methodology({ payload }: { payload: Payload }) {
   const notes = payload.meta.data_notes ?? {};
   const anomalies = (notes.lso100_anomalies || 0) + (notes.lso200_anomalies || 0);
+  const noAttendance = notes.lso100_no_attendance || 0;
   const dd = payload.meta.denominator_def ?? {};
   const d100 = dd['LSO100'] ?? 'store roster ∪ LSO100 completers';
   const d200 = dd['LSO200'] ?? 'LSO100 completers ∪ LSO200 completers';
@@ -68,8 +69,9 @@ export function Methodology({ payload }: { payload: Payload }) {
           <strong>Regions:</strong> shown as <em>Pending</em> until a store→region map is published — no region is guessed.
         </li>
         <li>
-          <strong>Excluded:</strong> {anomalies} cert{anomalies === 1 ? '' : 's'} earned before the hire date or with no hire
-          date are left out of the on-time count (data anomalies), but still counted as completed.
+          <strong>Excluded from on-time:</strong> {anomalies} earned before the hire date or undated, plus {noAttendance}{' '}
+          LSO100 earner{noAttendance === 1 ? '' : 's'} with no clocked attendance in the window (e.g. managers / corporate
+          roles who don’t log store hours). All are still counted as completed.
         </li>
         <li>
           <strong>Refresh:</strong> recomputed from source at least daily. The header badge shows data age; a “seed” chip
