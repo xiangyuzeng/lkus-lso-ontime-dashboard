@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
-# Hourly refresh: collect → validate → push.
-# Mirrors the bail-on-failure pattern from luckin-spoilage-dashboard so we
-# never publish an empty/stale payload.
+# Daily refresh: collect → validate → push. The collection system's entrypoint,
+# self-contained under pipeline/. Mirrors the bail-on-failure pattern from
+# luckin-spoilage-dashboard so we never publish an empty/stale payload.
+#
+# Lives in pipeline/ but the `pipeline` package is imported as `python -m
+# pipeline.X`, which needs the package's PARENT on sys.path — so we cd to the
+# parent of pipeline/ (the run-root) regardless of the caller's cwd. In a full
+# checkout that's the repo root; in Docker it's /workspace (which holds only the
+# pipeline/ package). The local public/data.json is just a staging file — the
+# frontend consumes the copy push_to_github uploads to the repo (GITHUB_FILE_PATH).
 
 set -euo pipefail
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 
 LOG_DIR="${LOG_DIR:-logs}"
 mkdir -p "$LOG_DIR"
@@ -17,8 +24,8 @@ log() {
 
 trap 'log "FAILED with exit $?"' ERR
 
-if [[ -z "${MYSQL_SECRET_NAME:-}" && -z "${MYSQL_HOST:-}" ]]; then
-  log "neither MYSQL_SECRET_NAME nor MYSQL_HOST is set; bailing"
+if [[ -z "${MYSQL_SECRET_NAME:-}" && -z "${MYSQL_USER:-}" ]]; then
+  log "neither MYSQL_SECRET_NAME nor MYSQL_USER is set; bailing (no credentials)"
   exit 1
 fi
 if [[ -z "${GITHUB_TOKEN:-}" ]]; then

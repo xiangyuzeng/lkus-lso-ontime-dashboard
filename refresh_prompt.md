@@ -7,7 +7,7 @@ push it to GitHub. Do **not** run any write SQL.
 ## Preferred path (host has DB creds)
 Run the pipeline directly, then stop:
 ```bash
-cd /opt/lkus-lso-ontime-dashboard && ./refresh.sh
+cd /opt/lkus-lso-ontime-dashboard && ./pipeline/refresh.sh
 ```
 If that succeeds, you are done.
 

@@ -5,17 +5,17 @@
 #   (paste a line below, edit the absolute path, save)
 #
 # Required env (set in /etc/profile.d/lkus-lso-ontime.sh or a systemd EnvironmentFile):
-#   MYSQL_SECRET_NAME=collector/mysql        # AWS Secrets Manager secret name
+#   MYSQL_SECRET_NAME=collector/mysql        # secret = shared username + password only
 #   AWS_REGION=us-east-1
-#   IEHR_HOST=...                            # optional per-DB host override (iEHR RDS)
-#   OPEMPEFFICIENCY_HOST=...                 # optional per-DB host override (opempefficiency RDS)
+#   IEHR_HOST=...                            # REQUIRED — iEHR RDS endpoint (+ optional IEHR_PORT)
+#   OPEMPEFFICIENCY_HOST=...                 # REQUIRED — opempefficiency RDS endpoint (+ optional *_PORT)
 #   GITHUB_TOKEN=ghp_xxx                     # repo-scope PAT, never committed
 #   GITHUB_REPO=xiangyuzeng/lkus-lso-ontime-dashboard
 #   GITHUB_BRANCH=main
 #   GITHUB_FILE_PATH=public/data.json
 #
 # Mode A — pymysql + Secrets Manager (PRIMARY). Daily at 06:00 UTC (after the ~05:00 batch):
-0 6 * * * cd /opt/lkus-lso-ontime-dashboard && ./refresh.sh >> logs/cron.log 2>&1
+0 6 * * * cd /opt/lkus-lso-ontime-dashboard && ./pipeline/refresh.sh >> logs/cron.log 2>&1
 
 # Mode C — Claude Code agent fallback (uncomment if Mode A is not viable):
 # 0 6 * * * cd /opt/lkus-lso-ontime-dashboard && claude --dangerously-skip-permissions -p "$(cat refresh_prompt.md)" >> logs/cron.log 2>&1

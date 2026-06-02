@@ -42,7 +42,7 @@ in `.env`, then `docker compose up -d`.
 
 ## Ad-hoc / fallback
 
-- One-off refresh without the container: `bash refresh.sh` (same env vars).
+- One-off refresh without the container: `bash pipeline/refresh.sh` (same env vars).
 - The `.github/workflows/refresh.yml` workflow can also run it, but only on a
   **self-hosted runner** with VPC reach — leave it `workflow_dispatch`-only
   unless such a runner is registered.

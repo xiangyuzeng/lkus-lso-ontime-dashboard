@@ -1,9 +1,11 @@
-# LSO on-time refresh container — APScheduler runs the tested refresh.sh
-# (schema_probe → collect → validate → push) once on startup and then daily;
-# Vercel auto-rebuilds when public/data.json is pushed.
+# LSO on-time refresh container — the self-contained collection system.
+# APScheduler runs the tested refresh.sh (schema_probe → collect → validate →
+# push) once on startup and then daily; Vercel auto-rebuilds when the pushed
+# public/data.json lands in the GitHub repo.
 #
-# Build context = repo root:
-#   docker compose -f pipeline/docker-compose.yml up -d --build
+# Build context = this pipeline/ directory (NOT the repo root — the frontend is
+# built and deployed separately).
+#   docker compose up -d --build        # run from pipeline/
 FROM python:3.11-slim
 
 WORKDIR /workspace
@@ -15,14 +17,15 @@ RUN apt-get update \
 
 # Install deps first for layer caching. apscheduler is only needed by the
 # container entrypoint, so it is added here rather than in requirements.txt.
-COPY pipeline/requirements.txt /tmp/requirements.txt
+COPY requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt apscheduler==3.10.4 && rm /tmp/requirements.txt
 
-# refresh.sh (repo root) + the pipeline package. public/ is (re)generated each run.
-COPY refresh.sh /workspace/refresh.sh
-COPY pipeline /workspace/pipeline
-RUN mkdir -p /workspace/public /workspace/logs && chmod +x /workspace/refresh.sh
+# Copy the whole pipeline package (build context = pipeline/) into a `pipeline/`
+# subdir so `python -m pipeline.X` resolves with /workspace on sys.path. public/
+# is (re)generated each run.
+COPY . /workspace/pipeline
+RUN chmod +x /workspace/pipeline/refresh.sh && mkdir -p /workspace/public /workspace/logs
 
 ENV PYTHONUNBUFFERED=1
 
-CMD ["python", "pipeline/scheduler/cron_runner.py"]
+CMD ["python", "-m", "pipeline.scheduler.cron_runner"]

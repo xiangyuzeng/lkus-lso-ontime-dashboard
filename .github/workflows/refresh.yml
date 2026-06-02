@@ -43,6 +43,6 @@ jobs:
         run: pip install -r pipeline/requirements.txt
 
       - name: Run refresh
-        run: bash refresh.sh
+        run: bash pipeline/refresh.sh
 
       # Vercel auto-deploys on push of public/data.json — no extra step needed.

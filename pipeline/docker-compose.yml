@@ -11,8 +11,8 @@ name: lkus-lso-ontime-pipeline
 services:
   pipeline:
     build:
-      context: ..
-      dockerfile: pipeline/Dockerfile
+      context: .
+      dockerfile: Dockerfile
     container_name: lkus-lso-ontime-pipeline
     env_file: .env
     restart: always

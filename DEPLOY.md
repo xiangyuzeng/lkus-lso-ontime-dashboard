@@ -15,16 +15,18 @@ site never reaches the database.
 ## 2. Environment (cron host)
 ```bash
 export AWS_REGION=us-east-1
-export MYSQL_SECRET_NAME=collector/mysql
-export IEHR_HOST=<iehr-rds-endpoint>             # optional per-DB host override
-export OPEMPEFFICIENCY_HOST=<opemp-rds-endpoint> # optional per-DB host override
+export MYSQL_SECRET_NAME=collector/mysql          # shared username + password only
+export IEHR_HOST=<iehr-rds-endpoint>              # REQUIRED — iEHR instance endpoint
+export OPEMPEFFICIENCY_HOST=<opemp-rds-endpoint>  # REQUIRED — opempefficiency endpoint
 export GITHUB_TOKEN=ghp_xxx                       # repo-scope fine-grained PAT
 export GITHUB_REPO=xiangyuzeng/lkus-lso-ontime-dashboard
 export GITHUB_BRANCH=main
 export GITHUB_FILE_PATH=public/data.json
 ```
-The two source DBs live on separate RDS instances; if the secret's `host` can
-only reach one, set the other via `IEHR_HOST` / `OPEMPEFFICIENCY_HOST`.
+The two source DBs live on separate RDS instances. Credentials come ONLY from the
+secret; each endpoint comes ONLY from its `IEHR_HOST` / `OPEMPEFFICIENCY_HOST` (the
+secret's `host` is never used). Both are required — a missing one aborts the run.
+Different ports? add `IEHR_PORT` / `OPEMPEFFICIENCY_PORT` (or inline `host:port`).
 
 ## 3. One-time GitHub + Vercel setup
 1. Create the public repo and push this project.

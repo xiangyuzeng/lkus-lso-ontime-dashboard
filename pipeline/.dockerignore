@@ -1,0 +1,11 @@
+# Build context is this pipeline/ dir. It's already small (no node_modules/.next
+# here — the frontend lives elsewhere in the repo and is built separately), so we
+# only strip runtime cruft, secrets, and the Docker metadata itself.
+__pycache__
+**/__pycache__
+*.pyc
+logs
+.env
+.dockerignore
+Dockerfile
+docker-compose.yml

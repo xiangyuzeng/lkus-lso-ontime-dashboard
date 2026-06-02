@@ -163,8 +163,11 @@ app/            page.tsx (header + metric cards + stores table), layout.tsx, glo
 lib/            types.ts (payload contract), payload.ts (usePayload), freshness.ts, tokens.ts
 components/     MetricCard.tsx, RateBar.tsx, FreshnessBadge.tsx, SeedBadge.tsx, KpiCard.tsx
 public/         data.json (SEED; overwritten by the pipeline)
-pipeline/       collect.py, schema_probe.py, config/{settings.py,region_map.csv}, sender/push_to_github.py
-refresh.sh · crontab.example · refresh_prompt.md · vercel.json · .github/workflows/refresh.yml
+pipeline/       self-contained collection system (own Docker build context)
+  refresh.sh, collect.py, schema_probe.py, config/{settings.py,region_map.csv},
+  sender/push_to_github.py, scheduler/cron_runner.py,
+  Dockerfile · docker-compose.yml · .dockerignore · .env.example · SETUP.md · setup.sh
+crontab.example · refresh_prompt.md · vercel.json · .github/workflows/refresh.yml
 ```
 
 ## Safety / read-only guarantees

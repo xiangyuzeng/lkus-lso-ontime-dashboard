@@ -5,8 +5,9 @@ invokes the already-tested ``refresh.sh`` (schema_probe → collect → validate
 push) once on startup — so a fresh container publishes a confirmed payload
 within seconds — and then daily on the configured schedule.
 
-For ad-hoc runs the bash entrypoint still works directly:
-    bash refresh.sh
+For ad-hoc runs the bash entrypoint still works directly (from anywhere — it
+cd's to its own run-root):
+    bash pipeline/refresh.sh
 
 Schedule comes from the environment (.env):
     DAILY_HOUR / DAILY_MINUTE / DAILY_TIMEZONE   (default 06:00 UTC)
@@ -23,8 +24,12 @@ from pathlib import Path
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
 
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-REFRESH_SH = REPO_ROOT / "refresh.sh"
+# cron_runner.py → pipeline/ is two parents up; the run-root (where `python -m
+# pipeline.X` launches from) is its parent. refresh.sh lives inside pipeline/ and
+# cd's to the run-root itself, so cwd here is just a sensible default.
+PIPELINE_DIR = Path(__file__).resolve().parent.parent
+RUN_ROOT = PIPELINE_DIR.parent
+REFRESH_SH = PIPELINE_DIR / "refresh.sh"
 
 DAILY_HOUR = int(os.environ.get("DAILY_HOUR", "6"))
 DAILY_MINUTE = int(os.environ.get("DAILY_MINUTE", "0"))
@@ -44,7 +49,7 @@ def run_refresh() -> None:
     logger.info("=== refresh start ===")
     t0 = time.monotonic()
     try:
-        proc = subprocess.run(["bash", str(REFRESH_SH)], cwd=str(REPO_ROOT), check=False)
+        proc = subprocess.run(["bash", str(REFRESH_SH)], cwd=str(RUN_ROOT), check=False)
         logger.info("refresh.sh exited %d", proc.returncode)
     except Exception:
         logger.exception("refresh run crashed")
