@@ -6,9 +6,14 @@ export interface Freshness {
   isStale: boolean;
 }
 
-// 90 min — the ≥ daily refresh keeps us well under this in steady state;
-// > 90 min on an hourly cron means at least one push failed and the board greys out.
-const DEFAULT_STALE_MIN = 90;
+// 26 hours — this board refreshes ONCE A DAY (cron at a fixed hour, ~24h apart),
+// so the payload is legitimately ~24h old for most of the day. Staleness must mean
+// "a daily run was actually missed", not "more than an hour since the last run".
+// 24h + 2h grace (cron jitter / timezone / Vercel build lag) → the board greys out
+// only after a full daily refresh has been skipped, never during normal operation.
+// (Was 90 min — an hourly/realtime threshold wrongly carried over from the
+// efficiency-dashboard family; it greyed the board ~1.5h after each daily refresh.)
+const DEFAULT_STALE_MIN = 26 * 60;
 
 export function freshness(
   generatedAt: ISO8601,
