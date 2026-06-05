@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-06-04T06:00:05.040Z",
+    "generated_at": "2026-06-05T06:00:04.587Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -82,8 +82,8 @@
         "numerator": 14,
         "denominator": 152,
         "rate": 0.0921,
-        "completed": 105,
-        "in_progress": 47,
+        "completed": 106,
+        "in_progress": 46,
         "anomalies": 1
       },
       "by_region": [
@@ -94,8 +94,8 @@
           "numerator": 14,
           "denominator": 152,
           "rate": 0.0921,
-          "completed": 105,
-          "in_progress": 47
+          "completed": 106,
+          "in_progress": 46
         }
       ]
     }
@@ -137,8 +137,8 @@
     {
       "store": "16th & 6th",
       "region": "pending",
-      "lso100_denominator": 13,
-      "lso200_denominator": 8
+      "lso100_denominator": 12,
+      "lso200_denominator": 7
     },
     {
       "store": "21st & 3rd",
@@ -209,8 +209,8 @@
     {
       "store": "8th & Broadway",
       "region": "pending",
-      "lso100_denominator": 54,
-      "lso200_denominator": 14
+      "lso100_denominator": 55,
+      "lso200_denominator": 15
     }
   ]
 }
