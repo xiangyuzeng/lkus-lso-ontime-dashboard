@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-06-10T06:00:04.815Z",
+    "generated_at": "2026-06-11T06:00:05.117Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -131,7 +131,7 @@
     {
       "store": "15th & 3rd",
       "region": "pending",
-      "lso100_denominator": 21,
+      "lso100_denominator": 20,
       "lso200_denominator": 6
     },
     {
@@ -209,7 +209,7 @@
     {
       "store": "8th & Broadway",
       "region": "pending",
-      "lso100_denominator": 55,
+      "lso100_denominator": 56,
       "lso200_denominator": 15
     }
   ]
