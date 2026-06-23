@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-06-22T06:00:04.430Z",
+    "generated_at": "2026-06-23T06:00:05.522Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -51,8 +51,8 @@
         "numerator": 0,
         "denominator": 444,
         "rate": 0.0,
-        "completed": 233,
-        "in_progress": 211,
+        "completed": 235,
+        "in_progress": 209,
         "anomalies": 3
       },
       "by_region": [
@@ -63,8 +63,8 @@
           "numerator": 0,
           "denominator": 444,
           "rate": 0.0,
-          "completed": 233,
-          "in_progress": 211
+          "completed": 235,
+          "in_progress": 209
         }
       ]
     },
@@ -80,10 +80,10 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 165,
-        "rate": 0.0848,
+        "denominator": 167,
+        "rate": 0.0838,
         "completed": 108,
-        "in_progress": 57,
+        "in_progress": 59,
         "anomalies": 1
       },
       "by_region": [
@@ -92,10 +92,10 @@
           "pending": true,
           "store_count": 18,
           "numerator": 14,
-          "denominator": 165,
-          "rate": 0.0848,
+          "denominator": 167,
+          "rate": 0.0838,
           "completed": 108,
-          "in_progress": 57
+          "in_progress": 59
         }
       ]
     }
@@ -120,7 +120,7 @@
       "store": "108th & Broadway",
       "region": "pending",
       "lso100_denominator": 17,
-      "lso200_denominator": 11
+      "lso200_denominator": 12
     },
     {
       "store": "154 Bleecker",
@@ -156,7 +156,7 @@
       "store": "23rd & 8th",
       "region": "pending",
       "lso100_denominator": 9,
-      "lso200_denominator": 6
+      "lso200_denominator": 7
     },
     {
       "store": "28th & 6th",
