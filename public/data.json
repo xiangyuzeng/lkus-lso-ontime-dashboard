@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-06-23T06:00:05.522Z",
+    "generated_at": "2026-06-24T06:00:05.019Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -51,8 +51,8 @@
         "numerator": 0,
         "denominator": 444,
         "rate": 0.0,
-        "completed": 235,
-        "in_progress": 209,
+        "completed": 237,
+        "in_progress": 207,
         "anomalies": 3
       },
       "by_region": [
@@ -63,8 +63,8 @@
           "numerator": 0,
           "denominator": 444,
           "rate": 0.0,
-          "completed": 235,
-          "in_progress": 209
+          "completed": 237,
+          "in_progress": 207
         }
       ]
     },
@@ -80,10 +80,10 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 167,
-        "rate": 0.0838,
+        "denominator": 169,
+        "rate": 0.0828,
         "completed": 108,
-        "in_progress": 59,
+        "in_progress": 61,
         "anomalies": 1
       },
       "by_region": [
@@ -92,10 +92,10 @@
           "pending": true,
           "store_count": 18,
           "numerator": 14,
-          "denominator": 167,
-          "rate": 0.0838,
+          "denominator": 169,
+          "rate": 0.0828,
           "completed": 108,
-          "in_progress": 59
+          "in_progress": 61
         }
       ]
     }
@@ -114,7 +114,7 @@
       "store": "102 Fulton",
       "region": "pending",
       "lso100_denominator": 45,
-      "lso200_denominator": 11
+      "lso200_denominator": 12
     },
     {
       "store": "108th & Broadway",
@@ -144,7 +144,7 @@
       "store": "21st & 3rd",
       "region": "pending",
       "lso100_denominator": 18,
-      "lso200_denominator": 7
+      "lso200_denominator": 8
     },
     {
       "store": "221 Grand",
