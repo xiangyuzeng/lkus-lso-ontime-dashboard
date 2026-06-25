@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-06-24T06:00:05.019Z",
+    "generated_at": "2026-06-25T06:00:04.474Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -48,11 +48,11 @@
       },
       "denominator_def": "store roster (active+separated) ∪ LSO100 completers",
       "overall": {
-        "numerator": 0,
+        "numerator": 1,
         "denominator": 444,
-        "rate": 0.0,
-        "completed": 237,
-        "in_progress": 207,
+        "rate": 0.0023,
+        "completed": 240,
+        "in_progress": 204,
         "anomalies": 3
       },
       "by_region": [
@@ -60,11 +60,11 @@
           "region": "Pending",
           "pending": true,
           "store_count": 18,
-          "numerator": 0,
+          "numerator": 1,
           "denominator": 444,
-          "rate": 0.0,
-          "completed": 237,
-          "in_progress": 207
+          "rate": 0.0023,
+          "completed": 240,
+          "in_progress": 204
         }
       ]
     },
@@ -80,10 +80,10 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 169,
-        "rate": 0.0828,
-        "completed": 108,
-        "in_progress": 61,
+        "denominator": 171,
+        "rate": 0.0819,
+        "completed": 109,
+        "in_progress": 62,
         "anomalies": 1
       },
       "by_region": [
@@ -92,10 +92,10 @@
           "pending": true,
           "store_count": 18,
           "numerator": 14,
-          "denominator": 169,
-          "rate": 0.0828,
-          "completed": 108,
-          "in_progress": 61
+          "denominator": 171,
+          "rate": 0.0819,
+          "completed": 109,
+          "in_progress": 62
         }
       ]
     }
@@ -138,13 +138,13 @@
       "store": "16th & 6th",
       "region": "pending",
       "lso100_denominator": 12,
-      "lso200_denominator": 5
+      "lso200_denominator": 6
     },
     {
       "store": "21st & 3rd",
       "region": "pending",
       "lso100_denominator": 18,
-      "lso200_denominator": 8
+      "lso200_denominator": 9
     },
     {
       "store": "221 Grand",
