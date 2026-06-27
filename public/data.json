@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-06-26T06:00:04.911Z",
+    "generated_at": "2026-06-27T06:00:05.008Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -59,7 +59,7 @@
         {
           "region": "Pending",
           "pending": true,
-          "store_count": 18,
+          "store_count": 20,
           "numerator": 1,
           "denominator": 444,
           "rate": 0.0023,
@@ -82,20 +82,20 @@
         "numerator": 14,
         "denominator": 171,
         "rate": 0.0819,
-        "completed": 110,
-        "in_progress": 61,
+        "completed": 111,
+        "in_progress": 60,
         "anomalies": 1
       },
       "by_region": [
         {
           "region": "Pending",
           "pending": true,
-          "store_count": 18,
+          "store_count": 20,
           "numerator": 14,
           "denominator": 171,
           "rate": 0.0819,
-          "completed": 110,
-          "in_progress": 61
+          "completed": 111,
+          "in_progress": 60
         }
       ]
     }
@@ -107,26 +107,26 @@
     {
       "store": "100 Maiden Ln",
       "region": "pending",
-      "lso100_denominator": 29,
-      "lso200_denominator": 8
+      "lso100_denominator": 27,
+      "lso200_denominator": 6
     },
     {
       "store": "102 Fulton",
       "region": "pending",
-      "lso100_denominator": 45,
+      "lso100_denominator": 43,
       "lso200_denominator": 12
     },
     {
       "store": "108th & Broadway",
       "region": "pending",
-      "lso100_denominator": 17,
-      "lso200_denominator": 12
+      "lso100_denominator": 16,
+      "lso200_denominator": 11
     },
     {
       "store": "154 Bleecker",
       "region": "pending",
-      "lso100_denominator": 11,
-      "lso200_denominator": 6
+      "lso100_denominator": 10,
+      "lso200_denominator": 5
     },
     {
       "store": "15th & 3rd",
@@ -137,20 +137,20 @@
     {
       "store": "16th & 6th",
       "region": "pending",
-      "lso100_denominator": 12,
-      "lso200_denominator": 6
+      "lso100_denominator": 11,
+      "lso200_denominator": 5
     },
     {
       "store": "21st & 3rd",
       "region": "pending",
-      "lso100_denominator": 18,
-      "lso200_denominator": 9
+      "lso100_denominator": 15,
+      "lso200_denominator": 8
     },
     {
       "store": "221 Grand",
       "region": "pending",
-      "lso100_denominator": 25,
-      "lso200_denominator": 10
+      "lso100_denominator": 24,
+      "lso200_denominator": 9
     },
     {
       "store": "23rd & 8th",
@@ -161,26 +161,26 @@
     {
       "store": "28th & 6th",
       "region": "pending",
-      "lso100_denominator": 43,
-      "lso200_denominator": 10
+      "lso100_denominator": 42,
+      "lso200_denominator": 9
     },
     {
       "store": "29th & 3rd",
       "region": "pending",
-      "lso100_denominator": 18,
+      "lso100_denominator": 17,
       "lso200_denominator": 10
     },
     {
       "store": "33rd & 10th",
       "region": "pending",
-      "lso100_denominator": 23,
-      "lso200_denominator": 10
+      "lso100_denominator": 21,
+      "lso200_denominator": 9
     },
     {
       "store": "37th & Broadway",
       "region": "pending",
-      "lso100_denominator": 36,
-      "lso200_denominator": 10
+      "lso100_denominator": 37,
+      "lso200_denominator": 9
     },
     {
       "store": "40th & 10th",
@@ -191,8 +191,14 @@
     {
       "store": "41st & Lexington",
       "region": "pending",
-      "lso100_denominator": 16,
-      "lso200_denominator": 9
+      "lso100_denominator": 15,
+      "lso200_denominator": 8
+    },
+    {
+      "store": "48th & 3rd",
+      "region": "pending",
+      "lso100_denominator": 8,
+      "lso200_denominator": 5
     },
     {
       "store": "52nd & Madison",
@@ -211,6 +217,12 @@
       "region": "pending",
       "lso100_denominator": 56,
       "lso200_denominator": 17
+    },
+    {
+      "store": "Grand Central Terminal",
+      "region": "pending",
+      "lso100_denominator": 7,
+      "lso200_denominator": 6
     }
   ]
 }
