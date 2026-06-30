@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-06-29T06:00:05.004Z",
+    "generated_at": "2026-06-30T06:00:04.941Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -80,10 +80,10 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 171,
-        "rate": 0.0819,
-        "completed": 111,
-        "in_progress": 60,
+        "denominator": 172,
+        "rate": 0.0814,
+        "completed": 113,
+        "in_progress": 59,
         "anomalies": 1
       },
       "by_region": [
@@ -92,10 +92,10 @@
           "pending": true,
           "store_count": 20,
           "numerator": 14,
-          "denominator": 171,
-          "rate": 0.0819,
-          "completed": 111,
-          "in_progress": 60
+          "denominator": 172,
+          "rate": 0.0814,
+          "completed": 113,
+          "in_progress": 59
         }
       ]
     }
@@ -144,7 +144,7 @@
       "store": "21st & 3rd",
       "region": "pending",
       "lso100_denominator": 15,
-      "lso200_denominator": 8
+      "lso200_denominator": 9
     },
     {
       "store": "221 Grand",
