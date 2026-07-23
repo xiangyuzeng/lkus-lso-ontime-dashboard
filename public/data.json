@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-07-22T06:00:03.224Z",
+    "generated_at": "2026-07-23T06:00:03.270Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -51,8 +51,8 @@
         "numerator": 1,
         "denominator": 443,
         "rate": 0.0023,
-        "completed": 251,
-        "in_progress": 192,
+        "completed": 252,
+        "in_progress": 191,
         "anomalies": 3
       },
       "by_region": [
@@ -63,8 +63,8 @@
           "numerator": 1,
           "denominator": 443,
           "rate": 0.0023,
-          "completed": 251,
-          "in_progress": 192
+          "completed": 252,
+          "in_progress": 191
         }
       ]
     },
@@ -80,10 +80,10 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 179,
-        "rate": 0.0782,
+        "denominator": 180,
+        "rate": 0.0778,
         "completed": 128,
-        "in_progress": 51,
+        "in_progress": 52,
         "anomalies": 1
       },
       "by_region": [
@@ -92,10 +92,10 @@
           "pending": true,
           "store_count": 21,
           "numerator": 14,
-          "denominator": 179,
-          "rate": 0.0782,
+          "denominator": 180,
+          "rate": 0.0778,
           "completed": 128,
-          "in_progress": 51
+          "in_progress": 52
         }
       ]
     }
@@ -216,7 +216,7 @@
       "store": "54th & 8th",
       "region": "pending",
       "lso100_denominator": 33,
-      "lso200_denominator": 7
+      "lso200_denominator": 8
     },
     {
       "store": "8th & Broadway",
