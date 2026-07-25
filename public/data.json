@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-07-24T06:00:03.432Z",
+    "generated_at": "2026-07-25T06:00:03.069Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -82,8 +82,8 @@
         "numerator": 14,
         "denominator": 180,
         "rate": 0.0778,
-        "completed": 131,
-        "in_progress": 49,
+        "completed": 132,
+        "in_progress": 48,
         "anomalies": 1
       },
       "by_region": [
@@ -94,8 +94,8 @@
           "numerator": 14,
           "denominator": 180,
           "rate": 0.0778,
-          "completed": 131,
-          "in_progress": 49
+          "completed": 132,
+          "in_progress": 48
         }
       ]
     }
@@ -131,7 +131,7 @@
     {
       "store": "154 Bleecker",
       "region": "pending",
-      "lso100_denominator": 10,
+      "lso100_denominator": 9,
       "lso200_denominator": 5
     },
     {
@@ -149,7 +149,7 @@
     {
       "store": "21st & 3rd",
       "region": "pending",
-      "lso100_denominator": 15,
+      "lso100_denominator": 16,
       "lso200_denominator": 9
     },
     {
@@ -173,7 +173,7 @@
     {
       "store": "29th & 3rd",
       "region": "pending",
-      "lso100_denominator": 15,
+      "lso100_denominator": 14,
       "lso200_denominator": 8
     },
     {
@@ -185,7 +185,7 @@
     {
       "store": "37th & Broadway",
       "region": "pending",
-      "lso100_denominator": 37,
+      "lso100_denominator": 38,
       "lso200_denominator": 10
     },
     {
