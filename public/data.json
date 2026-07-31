@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-07-30T06:00:03.575Z",
+    "generated_at": "2026-07-31T06:00:03.545Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -31,9 +31,9 @@
       "hours": "luckyus_opempefficiency.t_attendance"
     },
     "data_notes": {
-      "lso100_anomalies": 3,
+      "lso100_anomalies": 5,
       "lso100_no_attendance": 29,
-      "lso200_anomalies": 1
+      "lso200_anomalies": 2
     }
   },
   "metrics": [
@@ -53,7 +53,7 @@
         "rate": 0.0023,
         "completed": 253,
         "in_progress": 190,
-        "anomalies": 3
+        "anomalies": 5
       },
       "by_region": [
         {
@@ -84,7 +84,7 @@
         "rate": 0.0791,
         "completed": 135,
         "in_progress": 42,
-        "anomalies": 1
+        "anomalies": 2
       },
       "by_region": [
         {
@@ -108,13 +108,13 @@
       "store": "100 Maiden Ln",
       "region": "pending",
       "lso100_denominator": 26,
-      "lso200_denominator": 6
+      "lso200_denominator": 7
     },
     {
       "store": "102 Fulton",
       "region": "pending",
       "lso100_denominator": 43,
-      "lso200_denominator": 12
+      "lso200_denominator": 11
     },
     {
       "store": "108th & Broadway",
@@ -132,43 +132,43 @@
       "store": "154 Bleecker",
       "region": "pending",
       "lso100_denominator": 9,
-      "lso200_denominator": 5
+      "lso200_denominator": 6
     },
     {
       "store": "15th & 3rd",
       "region": "pending",
       "lso100_denominator": 18,
-      "lso200_denominator": 5
+      "lso200_denominator": 6
     },
     {
       "store": "16th & 6th",
       "region": "pending",
       "lso100_denominator": 10,
-      "lso200_denominator": 6
+      "lso200_denominator": 4
     },
     {
       "store": "21st & 3rd",
       "region": "pending",
-      "lso100_denominator": 16,
-      "lso200_denominator": 9
+      "lso100_denominator": 17,
+      "lso200_denominator": 10
     },
     {
       "store": "221 Grand",
       "region": "pending",
-      "lso100_denominator": 24,
+      "lso100_denominator": 23,
       "lso200_denominator": 7
     },
     {
       "store": "23rd & 8th",
       "region": "pending",
-      "lso100_denominator": 6,
-      "lso200_denominator": 5
+      "lso100_denominator": 9,
+      "lso200_denominator": 6
     },
     {
       "store": "28th & 6th",
       "region": "pending",
-      "lso100_denominator": 43,
-      "lso200_denominator": 9
+      "lso100_denominator": 42,
+      "lso200_denominator": 8
     },
     {
       "store": "29th & 3rd",
@@ -179,20 +179,20 @@
     {
       "store": "33rd & 10th",
       "region": "pending",
-      "lso100_denominator": 20,
-      "lso200_denominator": 9
+      "lso100_denominator": 21,
+      "lso200_denominator": 8
     },
     {
       "store": "37th & Broadway",
       "region": "pending",
-      "lso100_denominator": 38,
-      "lso200_denominator": 10
+      "lso100_denominator": 39,
+      "lso200_denominator": 11
     },
     {
       "store": "40th & 10th",
       "region": "pending",
       "lso100_denominator": 10,
-      "lso200_denominator": 4
+      "lso200_denominator": 5
     },
     {
       "store": "41st & Lexington",
@@ -203,19 +203,19 @@
     {
       "store": "48th & 3rd",
       "region": "pending",
-      "lso100_denominator": 9,
+      "lso100_denominator": 8,
       "lso200_denominator": 5
     },
     {
       "store": "52nd & Madison",
       "region": "pending",
-      "lso100_denominator": 11,
-      "lso200_denominator": 8
+      "lso100_denominator": 10,
+      "lso200_denominator": 7
     },
     {
       "store": "54th & 8th",
       "region": "pending",
-      "lso100_denominator": 33,
+      "lso100_denominator": 32,
       "lso200_denominator": 7
     },
     {
@@ -227,8 +227,8 @@
     {
       "store": "Grand Central Terminal",
       "region": "pending",
-      "lso100_denominator": 9,
-      "lso200_denominator": 7
+      "lso100_denominator": 8,
+      "lso200_denominator": 6
     }
   ]
 }
