@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-08-12T06:00:03.364Z",
+    "generated_at": "2026-08-13T06:00:03.599Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -80,9 +80,9 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 174,
-        "rate": 0.0805,
-        "completed": 136,
+        "denominator": 175,
+        "rate": 0.08,
+        "completed": 137,
         "in_progress": 38,
         "anomalies": 2
       },
@@ -92,9 +92,9 @@
           "pending": true,
           "store_count": 21,
           "numerator": 14,
-          "denominator": 174,
-          "rate": 0.0805,
-          "completed": 136,
+          "denominator": 175,
+          "rate": 0.08,
+          "completed": 137,
           "in_progress": 38
         }
       ]
@@ -174,7 +174,7 @@
       "store": "29th & 3rd",
       "region": "pending",
       "lso100_denominator": 14,
-      "lso200_denominator": 7
+      "lso200_denominator": 8
     },
     {
       "store": "33rd & 10th",
