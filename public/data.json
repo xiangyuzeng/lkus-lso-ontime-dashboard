@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-08-18T06:00:04.237Z",
+    "generated_at": "2026-08-19T06:00:03.867Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -49,10 +49,10 @@
       "denominator_def": "store roster (active+separated) ∪ LSO100 completers",
       "overall": {
         "numerator": 1,
-        "denominator": 444,
-        "rate": 0.0023,
+        "denominator": 455,
+        "rate": 0.0022,
         "completed": 254,
-        "in_progress": 190,
+        "in_progress": 201,
         "anomalies": 5
       },
       "by_region": [
@@ -61,10 +61,10 @@
           "pending": true,
           "store_count": 21,
           "numerator": 1,
-          "denominator": 444,
-          "rate": 0.0023,
+          "denominator": 455,
+          "rate": 0.0022,
           "completed": 254,
-          "in_progress": 190
+          "in_progress": 201
         }
       ]
     },
@@ -107,13 +107,13 @@
     {
       "store": "100 Maiden Ln",
       "region": "pending",
-      "lso100_denominator": 27,
+      "lso100_denominator": 28,
       "lso200_denominator": 7
     },
     {
       "store": "102 Fulton",
       "region": "pending",
-      "lso100_denominator": 42,
+      "lso100_denominator": 43,
       "lso200_denominator": 10
     },
     {
@@ -131,7 +131,7 @@
     {
       "store": "154 Bleecker",
       "region": "pending",
-      "lso100_denominator": 8,
+      "lso100_denominator": 9,
       "lso200_denominator": 6
     },
     {
@@ -143,13 +143,13 @@
     {
       "store": "16th & 6th",
       "region": "pending",
-      "lso100_denominator": 11,
+      "lso100_denominator": 12,
       "lso200_denominator": 5
     },
     {
       "store": "21st & 3rd",
       "region": "pending",
-      "lso100_denominator": 17,
+      "lso100_denominator": 18,
       "lso200_denominator": 10
     },
     {
@@ -173,13 +173,13 @@
     {
       "store": "29th & 3rd",
       "region": "pending",
-      "lso100_denominator": 14,
+      "lso100_denominator": 15,
       "lso200_denominator": 8
     },
     {
       "store": "33rd & 10th",
       "region": "pending",
-      "lso100_denominator": 21,
+      "lso100_denominator": 22,
       "lso200_denominator": 8
     },
     {
@@ -197,7 +197,7 @@
     {
       "store": "41st & Lexington",
       "region": "pending",
-      "lso100_denominator": 12,
+      "lso100_denominator": 14,
       "lso200_denominator": 8
     },
     {
@@ -215,13 +215,13 @@
     {
       "store": "54th & 8th",
       "region": "pending",
-      "lso100_denominator": 32,
+      "lso100_denominator": 33,
       "lso200_denominator": 7
     },
     {
       "store": "8th & Broadway",
       "region": "pending",
-      "lso100_denominator": 54,
+      "lso100_denominator": 55,
       "lso200_denominator": 16
     },
     {
