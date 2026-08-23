@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-08-22T06:00:03.988Z",
+    "generated_at": "2026-08-23T06:00:03.667Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -167,8 +167,8 @@
     {
       "store": "28th & 6th",
       "region": "pending",
-      "lso100_denominator": 43,
-      "lso200_denominator": 9
+      "lso100_denominator": 42,
+      "lso200_denominator": 8
     },
     {
       "store": "29th & 3rd",
@@ -185,8 +185,8 @@
     {
       "store": "37th & Broadway",
       "region": "pending",
-      "lso100_denominator": 38,
-      "lso200_denominator": 11
+      "lso100_denominator": 39,
+      "lso200_denominator": 12
     },
     {
       "store": "40th & 10th",
