@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-08-25T06:00:04.198Z",
+    "generated_at": "2026-08-28T14:45:30.815Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -31,9 +31,9 @@
       "hours": "luckyus_opempefficiency.t_attendance"
     },
     "data_notes": {
-      "lso100_anomalies": 5,
+      "lso100_anomalies": 6,
       "lso100_no_attendance": 30,
-      "lso200_anomalies": 2
+      "lso200_anomalies": 3
     }
   },
   "metrics": [
@@ -49,11 +49,11 @@
       "denominator_def": "store roster (active+separated) ∪ LSO100 completers",
       "overall": {
         "numerator": 1,
-        "denominator": 455,
+        "denominator": 458,
         "rate": 0.0022,
         "completed": 254,
-        "in_progress": 201,
-        "anomalies": 5
+        "in_progress": 204,
+        "anomalies": 6
       },
       "by_region": [
         {
@@ -61,10 +61,10 @@
           "pending": true,
           "store_count": 21,
           "numerator": 1,
-          "denominator": 455,
+          "denominator": 458,
           "rate": 0.0022,
           "completed": 254,
-          "in_progress": 201
+          "in_progress": 204
         }
       ]
     },
@@ -84,7 +84,7 @@
         "rate": 0.0795,
         "completed": 138,
         "in_progress": 38,
-        "anomalies": 2
+        "anomalies": 3
       },
       "by_region": [
         {
@@ -126,7 +126,7 @@
       "store": "128 W 32nd St",
       "region": "pending",
       "lso100_denominator": 9,
-      "lso200_denominator": 7
+      "lso200_denominator": 6
     },
     {
       "store": "154 Bleecker",
@@ -137,13 +137,13 @@
     {
       "store": "15th & 3rd",
       "region": "pending",
-      "lso100_denominator": 18,
-      "lso200_denominator": 5
+      "lso100_denominator": 19,
+      "lso200_denominator": 6
     },
     {
       "store": "16th & 6th",
       "region": "pending",
-      "lso100_denominator": 12,
+      "lso100_denominator": 13,
       "lso200_denominator": 5
     },
     {
@@ -161,13 +161,13 @@
     {
       "store": "23rd & 8th",
       "region": "pending",
-      "lso100_denominator": 9,
+      "lso100_denominator": 10,
       "lso200_denominator": 6
     },
     {
       "store": "28th & 6th",
       "region": "pending",
-      "lso100_denominator": 42,
+      "lso100_denominator": 43,
       "lso200_denominator": 8
     },
     {
@@ -185,7 +185,7 @@
     {
       "store": "37th & Broadway",
       "region": "pending",
-      "lso100_denominator": 39,
+      "lso100_denominator": 38,
       "lso200_denominator": 12
     },
     {
@@ -221,8 +221,8 @@
     {
       "store": "8th & Broadway",
       "region": "pending",
-      "lso100_denominator": 55,
-      "lso200_denominator": 16
+      "lso100_denominator": 54,
+      "lso200_denominator": 15
     },
     {
       "store": "Grand Central Terminal",
