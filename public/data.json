@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-08-31T06:00:03.960Z",
+    "generated_at": "2026-09-01T06:00:04.012Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -80,9 +80,9 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 176,
-        "rate": 0.0795,
-        "completed": 138,
+        "denominator": 177,
+        "rate": 0.0791,
+        "completed": 139,
         "in_progress": 38,
         "anomalies": 3
       },
@@ -92,9 +92,9 @@
           "pending": true,
           "store_count": 21,
           "numerator": 14,
-          "denominator": 176,
-          "rate": 0.0795,
-          "completed": 138,
+          "denominator": 177,
+          "rate": 0.0791,
+          "completed": 139,
           "in_progress": 38
         }
       ]
@@ -132,13 +132,13 @@
       "store": "154 Bleecker",
       "region": "pending",
       "lso100_denominator": 9,
-      "lso200_denominator": 6
+      "lso200_denominator": 5
     },
     {
       "store": "15th & 3rd",
       "region": "pending",
       "lso100_denominator": 19,
-      "lso200_denominator": 6
+      "lso200_denominator": 7
     },
     {
       "store": "16th & 6th",
@@ -228,7 +228,7 @@
       "store": "Grand Central Terminal",
       "region": "pending",
       "lso100_denominator": 8,
-      "lso200_denominator": 6
+      "lso200_denominator": 7
     }
   ]
 }
