@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-09-01T06:00:04.012Z",
+    "generated_at": "2026-09-02T06:00:03.916Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -49,10 +49,10 @@
       "denominator_def": "store roster (active+separated) ∪ LSO100 completers",
       "overall": {
         "numerator": 1,
-        "denominator": 458,
+        "denominator": 465,
         "rate": 0.0022,
         "completed": 254,
-        "in_progress": 204,
+        "in_progress": 211,
         "anomalies": 6
       },
       "by_region": [
@@ -61,10 +61,10 @@
           "pending": true,
           "store_count": 21,
           "numerator": 1,
-          "denominator": 458,
+          "denominator": 465,
           "rate": 0.0022,
           "completed": 254,
-          "in_progress": 204
+          "in_progress": 211
         }
       ]
     },
@@ -167,19 +167,19 @@
     {
       "store": "28th & 6th",
       "region": "pending",
-      "lso100_denominator": 43,
+      "lso100_denominator": 44,
       "lso200_denominator": 8
     },
     {
       "store": "29th & 3rd",
       "region": "pending",
-      "lso100_denominator": 14,
+      "lso100_denominator": 16,
       "lso200_denominator": 8
     },
     {
       "store": "33rd & 10th",
       "region": "pending",
-      "lso100_denominator": 22,
+      "lso100_denominator": 23,
       "lso200_denominator": 8
     },
     {
@@ -203,7 +203,7 @@
     {
       "store": "48th & 3rd",
       "region": "pending",
-      "lso100_denominator": 8,
+      "lso100_denominator": 9,
       "lso200_denominator": 5
     },
     {
@@ -215,13 +215,13 @@
     {
       "store": "54th & 8th",
       "region": "pending",
-      "lso100_denominator": 33,
+      "lso100_denominator": 34,
       "lso200_denominator": 7
     },
     {
       "store": "8th & Broadway",
       "region": "pending",
-      "lso100_denominator": 54,
+      "lso100_denominator": 55,
       "lso200_denominator": 15
     },
     {
