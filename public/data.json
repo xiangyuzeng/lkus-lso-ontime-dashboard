@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-09-08T06:00:04.212Z",
+    "generated_at": "2026-09-09T06:00:04.293Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -49,10 +49,10 @@
       "denominator_def": "store roster (active+separated) ∪ LSO100 completers",
       "overall": {
         "numerator": 1,
-        "denominator": 466,
+        "denominator": 475,
         "rate": 0.0021,
         "completed": 257,
-        "in_progress": 209,
+        "in_progress": 218,
         "anomalies": 6
       },
       "by_region": [
@@ -61,10 +61,10 @@
           "pending": true,
           "store_count": 22,
           "numerator": 1,
-          "denominator": 466,
+          "denominator": 475,
           "rate": 0.0021,
           "completed": 257,
-          "in_progress": 209
+          "in_progress": 218
         }
       ]
     },
@@ -125,13 +125,13 @@
     {
       "store": "128 W 32nd St",
       "region": "pending",
-      "lso100_denominator": 7,
+      "lso100_denominator": 8,
       "lso200_denominator": 5
     },
     {
       "store": "154 Bleecker",
       "region": "pending",
-      "lso100_denominator": 8,
+      "lso100_denominator": 9,
       "lso200_denominator": 5
     },
     {
@@ -143,13 +143,13 @@
     {
       "store": "16th & 6th",
       "region": "pending",
-      "lso100_denominator": 12,
+      "lso100_denominator": 13,
       "lso200_denominator": 5
     },
     {
       "store": "180 Varick",
       "region": "pending",
-      "lso100_denominator": 4,
+      "lso100_denominator": 6,
       "lso200_denominator": 3
     },
     {
@@ -161,7 +161,7 @@
     {
       "store": "221 Grand",
       "region": "pending",
-      "lso100_denominator": 24,
+      "lso100_denominator": 25,
       "lso200_denominator": 7
     },
     {
@@ -185,7 +185,7 @@
     {
       "store": "33rd & 10th",
       "region": "pending",
-      "lso100_denominator": 23,
+      "lso100_denominator": 24,
       "lso200_denominator": 8
     },
     {
@@ -197,7 +197,7 @@
     {
       "store": "40th & 10th",
       "region": "pending",
-      "lso100_denominator": 10,
+      "lso100_denominator": 11,
       "lso200_denominator": 5
     },
     {
@@ -221,7 +221,7 @@
     {
       "store": "54th & 8th",
       "region": "pending",
-      "lso100_denominator": 33,
+      "lso100_denominator": 34,
       "lso200_denominator": 6
     },
     {
