@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-09-14T06:00:04.248Z",
+    "generated_at": "2026-09-15T06:00:04.249Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -51,8 +51,8 @@
         "numerator": 1,
         "denominator": 475,
         "rate": 0.0021,
-        "completed": 259,
-        "in_progress": 216,
+        "completed": 260,
+        "in_progress": 215,
         "anomalies": 6
       },
       "by_region": [
@@ -63,8 +63,8 @@
           "numerator": 1,
           "denominator": 475,
           "rate": 0.0021,
-          "completed": 259,
-          "in_progress": 216
+          "completed": 260,
+          "in_progress": 215
         }
       ]
     },
@@ -80,9 +80,9 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 178,
-        "rate": 0.0787,
-        "completed": 139,
+        "denominator": 177,
+        "rate": 0.0791,
+        "completed": 138,
         "in_progress": 39,
         "anomalies": 3
       },
@@ -92,9 +92,9 @@
           "pending": true,
           "store_count": 22,
           "numerator": 14,
-          "denominator": 178,
-          "rate": 0.0787,
-          "completed": 139,
+          "denominator": 177,
+          "rate": 0.0791,
+          "completed": 138,
           "in_progress": 39
         }
       ]
@@ -113,8 +113,8 @@
     {
       "store": "102 Fulton",
       "region": "pending",
-      "lso100_denominator": 43,
-      "lso200_denominator": 10
+      "lso100_denominator": 42,
+      "lso200_denominator": 9
     },
     {
       "store": "108th & Broadway",
@@ -137,8 +137,8 @@
     {
       "store": "15th & 3rd",
       "region": "pending",
-      "lso100_denominator": 19,
-      "lso200_denominator": 7
+      "lso100_denominator": 18,
+      "lso200_denominator": 6
     },
     {
       "store": "16th & 6th",
@@ -216,7 +216,7 @@
       "store": "52nd & Madison",
       "region": "pending",
       "lso100_denominator": 10,
-      "lso200_denominator": 6
+      "lso200_denominator": 5
     },
     {
       "store": "54th & 8th",
