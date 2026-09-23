@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-09-22T06:00:04.117Z",
+    "generated_at": "2026-09-23T06:00:04.365Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -49,10 +49,10 @@
       "denominator_def": "store roster (active+separated) ∪ LSO100 completers",
       "overall": {
         "numerator": 1,
-        "denominator": 481,
+        "denominator": 487,
         "rate": 0.0021,
         "completed": 260,
-        "in_progress": 221,
+        "in_progress": 227,
         "anomalies": 6
       },
       "by_region": [
@@ -61,10 +61,10 @@
           "pending": true,
           "store_count": 22,
           "numerator": 1,
-          "denominator": 481,
+          "denominator": 487,
           "rate": 0.0021,
           "completed": 260,
-          "in_progress": 221
+          "in_progress": 227
         }
       ]
     },
@@ -149,13 +149,13 @@
     {
       "store": "180 Varick",
       "region": "pending",
-      "lso100_denominator": 6,
+      "lso100_denominator": 7,
       "lso200_denominator": 3
     },
     {
       "store": "21st & 3rd",
       "region": "pending",
-      "lso100_denominator": 18,
+      "lso100_denominator": 19,
       "lso200_denominator": 10
     },
     {
@@ -167,7 +167,7 @@
     {
       "store": "23rd & 8th",
       "region": "pending",
-      "lso100_denominator": 10,
+      "lso100_denominator": 11,
       "lso200_denominator": 6
     },
     {
@@ -203,7 +203,7 @@
     {
       "store": "41st & Lexington",
       "region": "pending",
-      "lso100_denominator": 15,
+      "lso100_denominator": 16,
       "lso200_denominator": 8
     },
     {
@@ -227,13 +227,13 @@
     {
       "store": "8th & Broadway",
       "region": "pending",
-      "lso100_denominator": 55,
+      "lso100_denominator": 56,
       "lso200_denominator": 15
     },
     {
       "store": "Grand Central Terminal",
       "region": "pending",
-      "lso100_denominator": 6,
+      "lso100_denominator": 7,
       "lso200_denominator": 5
     }
   ]
