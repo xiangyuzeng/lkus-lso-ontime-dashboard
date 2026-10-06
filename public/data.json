@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-10-05T06:00:04.758Z",
+    "generated_at": "2026-10-06T06:00:04.838Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -31,9 +31,9 @@
       "hours": "luckyus_opempefficiency.t_attendance"
     },
     "data_notes": {
-      "lso100_anomalies": 6,
+      "lso100_anomalies": 7,
       "lso100_no_attendance": 31,
-      "lso200_anomalies": 3
+      "lso200_anomalies": 4
     }
   },
   "metrics": [
@@ -53,7 +53,7 @@
         "rate": 0.002,
         "completed": 265,
         "in_progress": 228,
-        "anomalies": 6
+        "anomalies": 7
       },
       "by_region": [
         {
@@ -84,7 +84,7 @@
         "rate": 0.0787,
         "completed": 138,
         "in_progress": 40,
-        "anomalies": 3
+        "anomalies": 4
       },
       "by_region": [
         {
@@ -173,8 +173,8 @@
     {
       "store": "28th & 6th",
       "region": "pending",
-      "lso100_denominator": 46,
-      "lso200_denominator": 8
+      "lso100_denominator": 47,
+      "lso200_denominator": 9
     },
     {
       "store": "29th & 3rd",
@@ -215,8 +215,8 @@
     {
       "store": "52nd & Madison",
       "region": "pending",
-      "lso100_denominator": 11,
-      "lso200_denominator": 5
+      "lso100_denominator": 10,
+      "lso200_denominator": 4
     },
     {
       "store": "54th & 8th",
