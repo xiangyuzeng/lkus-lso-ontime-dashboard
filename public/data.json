@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-10-07T06:00:04.893Z",
+    "generated_at": "2026-10-08T06:00:04.596Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -233,8 +233,8 @@
     {
       "store": "Grand Central Terminal",
       "region": "pending",
-      "lso100_denominator": 7,
-      "lso200_denominator": 5
+      "lso100_denominator": 6,
+      "lso200_denominator": 4
     }
   ]
 }
