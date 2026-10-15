@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-10-14T06:00:05.240Z",
+    "generated_at": "2026-10-15T06:00:05.166Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -32,7 +32,7 @@
     },
     "data_notes": {
       "lso100_anomalies": 7,
-      "lso100_no_attendance": 31,
+      "lso100_no_attendance": 34,
       "lso200_anomalies": 4
     }
   },
@@ -49,10 +49,10 @@
       "denominator_def": "store roster (active+separated) ∪ LSO100 completers",
       "overall": {
         "numerator": 1,
-        "denominator": 499,
+        "denominator": 502,
         "rate": 0.002,
-        "completed": 268,
-        "in_progress": 231,
+        "completed": 272,
+        "in_progress": 230,
         "anomalies": 7
       },
       "by_region": [
@@ -61,10 +61,10 @@
           "pending": true,
           "store_count": 22,
           "numerator": 1,
-          "denominator": 499,
+          "denominator": 502,
           "rate": 0.002,
-          "completed": 268,
-          "in_progress": 231
+          "completed": 272,
+          "in_progress": 230
         }
       ]
     },
@@ -80,10 +80,10 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 178,
-        "rate": 0.0787,
+        "denominator": 181,
+        "rate": 0.0773,
         "completed": 138,
-        "in_progress": 40,
+        "in_progress": 43,
         "anomalies": 4
       },
       "by_region": [
@@ -92,10 +92,10 @@
           "pending": true,
           "store_count": 22,
           "numerator": 14,
-          "denominator": 178,
-          "rate": 0.0787,
+          "denominator": 181,
+          "rate": 0.0773,
           "completed": 138,
-          "in_progress": 40
+          "in_progress": 43
         }
       ]
     }
@@ -233,8 +233,8 @@
     {
       "store": "Grand Central Terminal",
       "region": "pending",
-      "lso100_denominator": 6,
-      "lso200_denominator": 4
+      "lso100_denominator": 7,
+      "lso200_denominator": 5
     }
   ]
 }
