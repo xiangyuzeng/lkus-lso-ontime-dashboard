@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-10-15T06:00:05.166Z",
+    "generated_at": "2026-10-16T06:00:04.835Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -113,7 +113,7 @@
     {
       "store": "102 Fulton",
       "region": "pending",
-      "lso100_denominator": 46,
+      "lso100_denominator": 45,
       "lso200_denominator": 11
     },
     {
@@ -126,7 +126,7 @@
       "store": "128 W 32nd St",
       "region": "pending",
       "lso100_denominator": 9,
-      "lso200_denominator": 5
+      "lso200_denominator": 4
     },
     {
       "store": "154 Bleecker",
@@ -209,8 +209,8 @@
     {
       "store": "48th & 3rd",
       "region": "pending",
-      "lso100_denominator": 11,
-      "lso200_denominator": 6
+      "lso100_denominator": 12,
+      "lso200_denominator": 7
     },
     {
       "store": "52nd & Madison",
