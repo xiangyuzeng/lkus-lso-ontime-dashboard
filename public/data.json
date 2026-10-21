@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-10-20T06:00:05.578Z",
+    "generated_at": "2026-10-21T06:00:05.228Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -49,10 +49,10 @@
       "denominator_def": "store roster (active+separated) ∪ LSO100 completers",
       "overall": {
         "numerator": 1,
-        "denominator": 501,
+        "denominator": 505,
         "rate": 0.002,
-        "completed": 273,
-        "in_progress": 228,
+        "completed": 275,
+        "in_progress": 230,
         "anomalies": 7
       },
       "by_region": [
@@ -61,10 +61,10 @@
           "pending": true,
           "store_count": 22,
           "numerator": 1,
-          "denominator": 501,
+          "denominator": 505,
           "rate": 0.002,
-          "completed": 273,
-          "in_progress": 228
+          "completed": 275,
+          "in_progress": 230
         }
       ]
     },
@@ -80,10 +80,10 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 181,
-        "rate": 0.0773,
+        "denominator": 183,
+        "rate": 0.0765,
         "completed": 138,
-        "in_progress": 43,
+        "in_progress": 45,
         "anomalies": 4
       },
       "by_region": [
@@ -92,10 +92,10 @@
           "pending": true,
           "store_count": 22,
           "numerator": 14,
-          "denominator": 181,
-          "rate": 0.0773,
+          "denominator": 183,
+          "rate": 0.0765,
           "completed": 138,
-          "in_progress": 43
+          "in_progress": 45
         }
       ]
     }
@@ -108,7 +108,7 @@
       "store": "100 Maiden Ln",
       "region": "pending",
       "lso100_denominator": 30,
-      "lso200_denominator": 7
+      "lso200_denominator": 8
     },
     {
       "store": "102 Fulton",
@@ -125,7 +125,7 @@
     {
       "store": "128 W 32nd St",
       "region": "pending",
-      "lso100_denominator": 8,
+      "lso100_denominator": 9,
       "lso200_denominator": 4
     },
     {
@@ -155,13 +155,13 @@
     {
       "store": "21st & 3rd",
       "region": "pending",
-      "lso100_denominator": 18,
+      "lso100_denominator": 19,
       "lso200_denominator": 9
     },
     {
       "store": "221 Grand",
       "region": "pending",
-      "lso100_denominator": 25,
+      "lso100_denominator": 26,
       "lso200_denominator": 8
     },
     {
@@ -227,8 +227,8 @@
     {
       "store": "8th & Broadway",
       "region": "pending",
-      "lso100_denominator": 58,
-      "lso200_denominator": 15
+      "lso100_denominator": 59,
+      "lso200_denominator": 16
     },
     {
       "store": "Grand Central Terminal",
