@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-10-29T06:00:05.843Z",
+    "generated_at": "2026-10-30T06:00:05.689Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -51,8 +51,8 @@
         "numerator": 2,
         "denominator": 511,
         "rate": 0.0039,
-        "completed": 283,
-        "in_progress": 228,
+        "completed": 285,
+        "in_progress": 226,
         "anomalies": 7
       },
       "by_region": [
@@ -63,8 +63,8 @@
           "numerator": 2,
           "denominator": 511,
           "rate": 0.0039,
-          "completed": 283,
-          "in_progress": 228
+          "completed": 285,
+          "in_progress": 226
         }
       ]
     },
@@ -80,9 +80,9 @@
       "denominator_def": "LSO100 completers ∪ LSO200 completers, excluding current Baristas",
       "overall": {
         "numerator": 14,
-        "denominator": 184,
-        "rate": 0.0761,
-        "completed": 140,
+        "denominator": 185,
+        "rate": 0.0757,
+        "completed": 141,
         "in_progress": 44,
         "anomalies": 4
       },
@@ -92,9 +92,9 @@
           "pending": true,
           "store_count": 22,
           "numerator": 14,
-          "denominator": 184,
-          "rate": 0.0761,
-          "completed": 140,
+          "denominator": 185,
+          "rate": 0.0757,
+          "completed": 141,
           "in_progress": 44
         }
       ]
@@ -120,7 +120,7 @@
       "store": "108th & Broadway",
       "region": "pending",
       "lso100_denominator": 16,
-      "lso200_denominator": 9
+      "lso200_denominator": 10
     },
     {
       "store": "128 W 32nd St",
