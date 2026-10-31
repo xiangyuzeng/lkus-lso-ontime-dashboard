@@ -1,7 +1,7 @@
 {
   "meta": {
     "board_id": "LCNA-HR-LSO-ONTIME-2026",
-    "generated_at": "2026-10-30T06:00:05.689Z",
+    "generated_at": "2026-10-31T06:00:05.766Z",
     "generated_by": "collect.py",
     "tz": "America/New_York",
     "tenant": "LKUS",
@@ -51,8 +51,8 @@
         "numerator": 2,
         "denominator": 511,
         "rate": 0.0039,
-        "completed": 285,
-        "in_progress": 226,
+        "completed": 286,
+        "in_progress": 225,
         "anomalies": 7
       },
       "by_region": [
@@ -63,8 +63,8 @@
           "numerator": 2,
           "denominator": 511,
           "rate": 0.0039,
-          "completed": 285,
-          "in_progress": 226
+          "completed": 286,
+          "in_progress": 225
         }
       ]
     },
